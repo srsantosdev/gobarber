@@ -26,7 +26,7 @@ app.use('/files', express.static(uploadConfig.uploadsFolder));
 
 app.use(routes);
 
-app.use(errors);
+app.use(errors());
 
 app.use(
   (error: Error, request: Request, response: Response, _: NextFunction) => {
