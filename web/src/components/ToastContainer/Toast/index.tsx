@@ -39,7 +39,7 @@ const Toast: React.FC<ToastData> = ({ toast, style }) => {
       style={style}
       key={toast.id}
       type={toast.type}
-      hasDescription={!!toast.description}
+      hasDescription={Number(!!toast.description)}
     >
       {icons[toast.type || 'info']}
 

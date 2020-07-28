@@ -13,9 +13,9 @@ export default class ProviderDayAvailabilityController {
     );
 
     const availabilities = await listProviderDayAvailability.execute({
+      provider_id: id,
       day: Number(day),
       month: Number(month),
-      provider_id: id,
       year: Number(year),
     });
 
