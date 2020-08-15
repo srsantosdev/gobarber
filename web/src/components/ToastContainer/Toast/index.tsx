@@ -39,7 +39,8 @@ const Toast: React.FC<ToastData> = ({ toast, style }) => {
       style={style}
       key={toast.id}
       type={toast.type}
-      hasDescription={Number(!!toast.description)}
+      hasdescription={Number(!!toast.description)}
+      data-testid="toast-component"
     >
       {icons[toast.type || 'info']}
 
@@ -48,7 +49,11 @@ const Toast: React.FC<ToastData> = ({ toast, style }) => {
         {toast.description && <p>{toast.description}</p>}
       </div>
 
-      <button type="button" onClick={() => removeToast(toast.id)}>
+      <button
+        type="button"
+        onClick={() => removeToast(toast.id)}
+        data-testid="close-button-toast"
+      >
         <FiXCircle size={18} />
       </button>
     </Container>
